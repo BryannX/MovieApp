@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
+
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -34,14 +36,21 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         this.movieList = movieList;
     }
 
-    public static class MovieViewHolder extends RecyclerView.ViewHolder
+    public static class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
         private ImageView moviePoster;
 
-        public MovieViewHolder(View itemView) {
+        public MovieViewHolder(View itemView)
+        {
             super(itemView);
 
             this.moviePoster = (ImageView) itemView.findViewById(R.id.iv_movieposter);
+        }
+
+        @Override
+        public void onClick(View v)
+        {
+            Toast.makeText(v.getContext(), "Movie clicked", Toast.LENGTH_SHORT).show();
         }
     }
 
