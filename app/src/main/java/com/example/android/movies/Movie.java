@@ -13,6 +13,15 @@ public class Movie {
     private String rating;
     private String release_date;
 
+    public Movie()
+    {
+        this.movie_title = "None";
+        this.poster_path = "None";
+        this.plot = "None";
+        this.rating = "None";
+        this.release_date = "None";
+    }
+
     public Movie(String title, String poster, String mPlot, String mRating, String date)
     {
         this.movie_title = title;
