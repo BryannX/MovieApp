@@ -9,6 +9,10 @@
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="0dp"
         android:id="@+id/rv_display"/>
 
     <ProgressBar

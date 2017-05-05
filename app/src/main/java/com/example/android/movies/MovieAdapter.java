@@ -74,7 +74,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         Log.d(TAG, "Movie" + position + "set.");
         Movie movie = movieList.get(position);
         String baseURL = "http://image.tmdb.org/t/p/";
-        String imageSize = "w185/";
+        String imageSize = "w342/";
 
         Picasso.with(context)
                 .load(baseURL + imageSize + movie.getPoster_path())

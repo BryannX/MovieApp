@@ -1,5 +1,6 @@
 package com.example.android.movies;
 
+import android.graphics.Rect;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -37,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         new DownloadTask().execute(url);
 
     }
+
+
 
     private class DownloadTask extends AsyncTask<String, Void, String>
     {
