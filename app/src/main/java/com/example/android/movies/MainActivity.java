@@ -1,5 +1,6 @@
 package com.example.android.movies;
 
+import android.content.Intent;
 import android.graphics.Rect;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -40,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     private class DownloadTask extends AsyncTask<String, Void, String>
     {
         @Override
@@ -73,8 +73,14 @@ public class MainActivity extends AppCompatActivity {
                     //Get HTTP as JSONObject
                     JSONObject reader = new JSONObject(stream);
 
+
                     //Get the JSONObject Results
                     JSONArray results = reader.getJSONArray("results");
+
+                    Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+
+
+                    intent.putExtra("results", results.toString());
 
                     movieList = new ArrayList<>();
 
