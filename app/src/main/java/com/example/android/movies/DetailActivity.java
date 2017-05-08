@@ -2,6 +2,9 @@ package com.example.android.movies;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Color;
+import android.media.Rating;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -51,13 +54,30 @@ public class DetailActivity extends AppCompatActivity {
         {
             mTitle.setText((String) bundle.get("mov_title"));
             mBD_path = (String) bundle.get("mov_poster");
-            mRating.setText((String) bundle.get("mov_rating"));
             mDate.setText((String) bundle.get("mov_date"));
             mDesc.setText((String) bundle.get("mov_plot"));
 
             Picasso.with(context)
                     .load(baseURL + imageSize + mBD_path)
                     .into(mPoster);
+
+            String rat = (String) bundle.get("mov_rating");
+            float floatRating = Float.parseFloat(rat);
+            if(floatRating > 7.0)
+            {
+                mRating.setTextColor(Color.GREEN);
+
+            }
+            else if(floatRating >5.0)
+            {
+                mRating.setTextColor(Color.rgb(255,152,0));
+            }
+            else
+            {
+                mRating.setTextColor(Color.RED);
+            }
+            mRating.setText(String.valueOf(floatRating));
         }
+
     }
 }
