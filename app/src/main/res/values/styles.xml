@@ -10,5 +10,15 @@
         <item name="colorAccent">#FFFFFF</item>
         <!--Medium Orange-->
     </style>
+    <style name="NoTitle" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#FF5722</item>
+        <!--Medium Orange-->
+        <item name="colorPrimaryDark">#D74315</item>
+        <!--Dark Orange-->
+        <item name="colorAccent">#FFFFFF</item>
+        <!--Medium Orange-->
+    </style>
+
 
 </resources>
